@@ -3,14 +3,6 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/**
- * Users_model Model Class
- *
- * @package  Shop
- * @subpackage Users
- * @category Users
- * @author *nbgteam <office@nbgteam.com>
- */
 class Users_model extends CI_Model {
 
     /**
@@ -94,18 +86,6 @@ class Users_model extends CI_Model {
         return $users;
     }
 
-    public function count_users() {
-        $this->db->select('COUNT(*) as number');
-
-        $result = $this->db->get('users');
-
-        $row = $result->row_array();
-
-        $result->free_result();
-
-        return (int) $row['number'];
-    }
-
     function search_users_filter($keyword) {
 
         // select id and name
@@ -142,19 +122,5 @@ class Users_model extends CI_Model {
         return $user;
     }
 
-    public function update_user($id, $data) {
-        $this->db->where('id', $id);
-
-        if (!empty($data['password'])) {
-            $data['password'] = sha1($this->salt . $data['password']);
-        }
-
-        if (!$this->db->update('users', $data)) {
-            throw new Exception(lang('user_information_not_changed'));
-        }
-    }
 
 }
-
-/* End of file: Users_model.php */
-/* Location: ./system/application/models/Users_model.php */
