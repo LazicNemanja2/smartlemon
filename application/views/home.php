@@ -26,8 +26,6 @@
         .buttons {
             margin: 30px;
             float:right;
-
-
         }
 
         .form {
@@ -35,6 +33,11 @@
             float:right;
             border: 2px solid;
             padding: 10px;
+        }
+
+        .main_section {
+            width: 60%;
+            margin: auto;
         }
     </style>
 </head>
