@@ -5,6 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style type="text/css">
+
+
+        body {
+            background-color: #fff;
+            margin: 60px;
+            font: 13px/20px normal Helvetica, Arial, sans-serif;
+            color: #4F5155;
+        }
+
+        a {
+            color: #3a455b;
+            background-color: transparent;
+            font-weight: normal;
+            display: block;
+            text-decoration: none;
+        }
+        .buttons {
+            margin: 30px;
+            float:right;
+
+
+        }
+
+        .form {
+            margin: 30px;
+            float:right;
+            border: 2px solid;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
