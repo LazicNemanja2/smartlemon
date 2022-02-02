@@ -39,23 +39,38 @@
             width: 60%;
             margin: auto;
         }
+        .green {
+            border: 1px solid green;
+            padding: 10px;
+            margin: 30px;
+        }
     </style>
 </head>
 <body>
 
     <div class="main_section">
+    <?php if (isset($_SESSION['notification'])): ?>
+            <div class="green">
+                <?php echo $_SESSION['notification']; ?>
+            </div>
+        <?php endif; ?>
         <div class="buttons">
-            <a href="<?php echo site_url('registration'); ?>">Registration</a>
+            <?php if (isset($_SESSION['user'])): ?>
+                <a href="<?php echo site_url('logout'); ?>">Logout</a>
+            <?php else: ?>
+                <a href="<?php echo site_url('registration'); ?>">Registration</a>
 
-            <a href="<?php echo site_url('login'); ?>">Login</a>
+                <a href="<?php echo site_url('login'); ?>">Login</a>
+            <?php endif; ?>
         </div>
 
         <div class="form">
-            <form action="" method="post">
+            <form action="<?php echo site_url('search'); ?>" method="post">
                 <input type="text" name="term" id="" placeholder="search">
                 <button type="submit">Submit</button>
             </form>
         </div>
+
     </div>
     
     

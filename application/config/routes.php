@@ -53,6 +53,9 @@ $route['default_controller'] = 'pages';
 $route['registration'] = 'pages/registration';
 $route['register_user'] = 'pages/register_user';
 $route['login'] = 'pages/login';
+$route['login_user'] = 'pages/login_user';
+$route['logout'] = 'pages/logout';
+$route['search'] = 'pages/search';
 
 
 $route['404_override'] = '';

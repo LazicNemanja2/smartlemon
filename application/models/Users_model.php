@@ -36,14 +36,11 @@ class Users_model extends CI_Model {
     }
 
     function login($email, $password) {
-        // set query (retrieve user with email/password pair)
         $this->db->where('email', $email);
         $this->db->where('password', sha1($this->salt . $password));
 
         $result = $this->db->get('users');
 
-        // check if result object contains only one row,
-        // aka matching email and password
         if ($result->num_rows() === 1) {
             return TRUE;
         } else {
@@ -112,20 +109,10 @@ class Users_model extends CI_Model {
     function search_users_filter($keyword) {
 
         // select id and name
-        $this->db->select('id, first_name, last_name, phone, email');
-
-        // limit result count 
-        $this->db->limit(30);
-
-        // set distinct clause
-        $this->db->distinct();
+        $this->db->select('id, name, email');
 
         // select where name like keyword
-        $this->db->like('first_name', $keyword);
-
-        // or select where phone like keyword
-        $this->db->or_like('phone', $keyword);
-
+        $this->db->like('name', $keyword);
         // or select where email like keyword
         $this->db->or_like('email', $keyword);
 

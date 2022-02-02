@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
     <style type="text/css">
@@ -51,6 +50,21 @@
             padding: 10px;
             margin: 30px;
         }
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
     </style>
 
 </head>
@@ -63,13 +77,36 @@
             </div>
         <?php endif; ?>
         <div class="notification"></div>
-        
+
         <div class="form">
-            <form action="<?php echo site_url('login_user'); ?>" method="post" class="" >
-                <input type="text" name="email" id="" placeholder="Email" data-message-required="Email is required" data-message-incorrect="Email is in incorrect form">
-                <input type="text" name="password" id="" placeholder="Password" data-message-required="Password is required">
+            <form action="<?php echo site_url('search'); ?>" method="post">
+                <input type="text" name="term" id="" placeholder="search">
                 <button type="submit">Submit</button>
             </form>
+        </div>
+        
+        <div class="form">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+
+                <tbody>
+                    <?php if (isset($users) && count($users) > 0): ?>
+                        <?php foreach ($users as $user): ?>
+                            <tr>
+                                <td>
+                                    <?php echo $user['name']; ?>
+                                </td>
+                                <td>
+                                    <?php echo $user['email']; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
 
         <div class="back">
