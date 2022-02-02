@@ -10,9 +10,9 @@
 
     <div class="main_section">
         <div class="buttons">
-            <a href="<?php echo base_url('pages/registration'); ?>">Registration</a>
+            <a href="<?php echo site_url('registration'); ?>">Registration</a>
 
-            <a href="<?php echo base_url('pages/login'); ?>">Login</a>
+            <a href="<?php echo site_url('login'); ?>">Login</a>
         </div>
 
         <div class="form">
