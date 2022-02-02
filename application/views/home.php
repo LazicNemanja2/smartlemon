@@ -8,7 +8,21 @@
 </head>
 <body>
 
-    First
+    <div class="main_section">
+        <div class="buttons">
+            <a href="<?php echo base_url('pages/registration'); ?>">Registration</a>
+
+            <a href="<?php echo base_url('pages/login'); ?>">Login</a>
+        </div>
+
+        <div class="form">
+            <form action="" method="post">
+                <input type="text" name="term" id="" placeholder="search">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
     
 </body>
 </html>
